@@ -17,5 +17,5 @@ int print_last_digit(int t)
 		id = id * -1;
 	}
 	_putchar(id + '0');
-	return (0);
+	return (id);
 }
