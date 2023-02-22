@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * Entry - print_alphabet_x10
+ * print_alphabet_x10 - Entry
  * Return - None
  */
 void print_alphabet_x10(void);
 
-void print_alphabet_x10(void);
+void print_alphabet_x10(void)
 {
 	char c;
 
@@ -21,3 +21,4 @@ void print_alphabet_x10(void);
 		putchar('\n');
 		i++;
 	}
+}
