@@ -1,20 +1,20 @@
-#include <stdio.h>
+# include "main.h"
 
 /**
  * main - Entry
  * Return: Always 0
  */
-
 int main(void)
 {
-	char word[] = "_putchar";
+	_putchar("_");
+	_putchar("p");
+	_putchar("u");
+	_putchar("t");
+	_putchar("c");
+	_putchar("h");
+	_putchar("a");
+	_putchar("r");
+	_putchar("\n");
 
-	int i = 0;
-
-	while (word[i] != '\n')
-	{
-		putchar(word[i]);
-		i++;
-	}
 	return (0);
 }
