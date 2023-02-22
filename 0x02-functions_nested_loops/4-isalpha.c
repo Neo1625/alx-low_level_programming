@@ -11,11 +11,11 @@ int _isalpha(int c);
 
 int _isalpha(int c)
 {
-	int isAlpha = 1;
+	int isAlpha = 0;
 
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 	{
-		isAlpha  = 0;
+		isAlpha  = 1;
 	}
 	return (isAlpha);
 }
