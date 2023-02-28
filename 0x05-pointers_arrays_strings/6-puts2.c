@@ -6,7 +6,7 @@
  * Return: print
  */
 
-void puts(char *str);
+void puts2(char *str);
 
 void puts2(char *str)
 {
