@@ -21,8 +21,9 @@ char *_strcat(char *dest, char *src)
 
 	while (src[src_len] != '\0')
 	{
-		dest = realloc(dest, dest_len++);
-		dest[dest_len++] = src[src_len++];
+		dest_len++;
+		dest = realloc(dest, dest_len);
+		dest[dest_len] = src[src_len++];
 	}
 
 	dest = realloc(dest, dest_len++);
