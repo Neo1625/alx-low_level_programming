@@ -22,7 +22,7 @@ int _strcmp(char *s1, char *s2)
 
 	while (s1[len_s1] != '\0')
 	{
-		s1_value = += s1[len_s1];
+		s1_value += s1[len_s1];
 		len_s1++;
 	}
 
