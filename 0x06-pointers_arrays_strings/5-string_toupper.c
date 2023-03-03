@@ -14,7 +14,7 @@ char *string_toupper(char *s)
 	while (s[s_len] != '\0')
 	{
 		if (s[s_len] >= 65 && s[s_len] <= 90)
-			continue
+			continue;
 		else
 			s[s_len] = s[s_len] - 32;
 		s_len++;
