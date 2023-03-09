@@ -38,12 +38,14 @@ int _sqrt_helper(int n, int low, int high)
 {
 	int mid = (low + high);
 
+	int square;
+
 	if (low > high)
 	{
 		return (-1);
 	}
 
-	int square = mid * mid;
+	square = mid * mid;
 
 	if (square == n)
 	{
