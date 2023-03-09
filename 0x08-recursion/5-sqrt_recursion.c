@@ -36,12 +36,13 @@ int _sqrt_recursion(int n)
 
 int _sqrt_helper(int n, int low, int high)
 {
+	int mid = (low + high);
+
 	if (low > high)
 	{
 		return (-1);
 	}
 
-	int mid = (low + high) / 2;
 	int square = mid * mid;
 
 	if (square == n)
