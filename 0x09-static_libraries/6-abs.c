@@ -1,15 +1,18 @@
 #include "main.h"
 
 /**
- * _abs - computes the absolute value of an integer
- * @n: the int to check
- * Return: the absolute value of int
+ * _abs - Prints the absolute the value of given input
+ * @int: Integer input
+ *
+ * Return: Returns the positive integer of a number
  */
-int _abs(int n)
+int _abs(int);
+
+int _abs(int t)
 {
-	int _abs(int n)
+	if (t < 0)
 	{
-		return (n);
+		t = t * -1;
 	}
-	return (-n);
+	return (t);
 }
