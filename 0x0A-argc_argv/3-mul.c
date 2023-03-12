@@ -1,4 +1,3 @@
-#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -23,14 +22,16 @@ int main(int argc, char *argv[])
 
 		return (1);
 	}
+	else
+	{
+		first = atoi(argv[1]);
 
-	first = atoi(argv[1]);
+		second = atoi(argv[2]);
 
-	second = atoi(argv[2]);
+		result = first * second;
 
-	result = first * second;
+		printf("%d\n", result);
 
-	printf("%d\n", result);
-
-	return (0);
+		return (0);
+	}
 }
