@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 
 	int i, j;
 
-	if (argc < 3)
+	if (argc == 1)
 	{
 		printf("%d\n", 0);
 
