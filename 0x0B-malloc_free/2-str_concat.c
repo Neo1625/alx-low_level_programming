@@ -39,7 +39,7 @@ char *str_concat(char *s1, char *s2)
 		s2_len++;
 	}
 
-	s1ands2 = malloc(sizeof(char) * (s1_len + s2_len));
+	s1ands2 = malloc(sizeof(char) * (s1_len + s2_len + 1));
 
 	for (i = 0; s1[i]; i++)
 	{
