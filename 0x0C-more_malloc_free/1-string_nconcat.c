@@ -57,5 +57,5 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	s1ands2[s1_len + remlen] = '\0';
 
-	return (slands2);
+	return (s1ands2);
 }
