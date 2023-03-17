@@ -11,51 +11,45 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i, j, s1_len = 0, s2_len = 0, remlen;
-	char *s1ands2;
+	unsigned int i, j, m;
+	char *str;
 
 	if (s1 == NULL)
 	{
-		s1 = "";
-	}
-	if (s2 == NULL)
-	{
-		s2 = "";
-	}
-	for (i = 0; s1[i] != '\0'; i++)
-	{
-		s1_len++;
-	}
-	for (i = 0; s2[i] != '\0'; i++)
-	{
-		s2_len++;
-	}
-	if (n >= s2_len)
-	{
-		s1ands2 = malloc(sizeof(char) * (s1_len + s2_len + 1));
-		remlen = s2_len;
+		i = 0;
 	}
 	else
 	{
-		s1ands2 = malloc(sizeof(char) * (s1_len + n + 1));
-		remlen = n;
+		for (i = 0; s1[i]; i++)
+			;
 	}
-	if (s1ands2 == NULL)
+	if (s2 == NULL)
+	{
+		j = 0;
+	}
+	else
+	{
+		for (j = 0; s2[j]; j++)
+			;
+	}
+	if (j > n)
+	{
+		j = n;
+	}
+	ptr = malloc(sizeof(char) * (i + j + 1));
+	if (ptr == NULL)
 	{
 		return (NULL);
 	}
-	j = 0;
-	for (i = 0; i < s1_len; i++)
+	for (m = 0; m < i; m++)
 	{
-		s1ands2[j] = s1[i];
-		j++;
+		str[m] = s1[m];
 	}
-	for (i = 0; i < n; i++)
+	for (m = 0; m < j; m++)
 	{
-		s1ands2[j] = s2[i];
-		j++;
+		str[m + i] = s2[m];
 	}
-	s1ands2[s1_len + remlen] = '\0';
+	str[i + j] = '\0';
 
-	return (s1ands2);
+	return (str);
 }
