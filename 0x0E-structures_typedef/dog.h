@@ -2,16 +2,16 @@
 #define _DOG_H_
 
 /**
- * struct my_dog - My dog struct
+ * struct dog - My dog struct
  * @name: String input.
  * @age: Integer input.
  * @owner: String input.
  */
-struct my_dog
+struct dog
 {
 	char *name;
 	float age;
 	char *owner;
-}
+};
 
 #endif
