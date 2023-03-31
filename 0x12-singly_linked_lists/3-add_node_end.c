@@ -3,7 +3,7 @@
 #include <string.h>
 
 /**
- * add_node - Function that adds new node at
+ * add_node_end - Function that adds new node at
  * the end of a list)t list.
  *
  * @head: Head of a singl linked list.
@@ -32,6 +32,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	else
 	{
 		list_t *current = *head;
+
 		while (current->next != NULL)
 		{
 			current = current->next;
