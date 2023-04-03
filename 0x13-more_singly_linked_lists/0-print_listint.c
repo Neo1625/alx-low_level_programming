@@ -1,6 +1,7 @@
 #include "lists.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <stddef.h>
 
 /**
  * print_listint - Function that prints all the elements of a listint_t list.
@@ -14,7 +15,7 @@ size_t print_listint(const listint_t *h)
 
 	while (h != NULL)
 	{
-		printf("%d\n", h->next);
+		printf("%d\n", h->n);
 		num_of_nodes++;
 
 		h = h->next;
