@@ -1,58 +1,73 @@
 #include "lists.h"
 
 /**
- * insert_nodeint_at_index - Function that inserts
- * a node at a given position.
+ * listint_len - Function that retursn the number
+ * of elements in listint_t.
+ * @h: Pointer to listint_t
+ *
+ * Return: Number of elements in listint_t
+ */
+size_t listint_len(const listint_t *h)
+{
+	size_t len = 0;
+
+	while (h != NULL)
+	{
+		len++;
+		h = h->next;
+	}
+
+	return (len);
+}
+
+/**
+ * insert_nodeint_at_index - Function that adds a new node at a
+ * given position.
  *
  * @head: Pointer to the first node of listint_t.
- * @idx: Index of the list where the new node should be added.
- * @n: Integer number ot insert.
+ * @idx: Index of the list where the new node
+ * should be added.
+ * @n: Integer to add.
  *
- * Return: Returns the address of the new node, NULL if it failed.
+ * Return: Returns the address of the new node, or
+ * NULL if it failed.
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *next, *current, *prev;
-	unsigned int curr_idx = 0;
-	listint_t *new_node = (listint_t *)malloc(sizeof(listint_t));
+	size_t len;
+	unsigned int i;
+	listint_t *new_node;
+	listint_t *current = *head;
 
+	len = listint_len(*head);
+
+	if (len > idx)
+	{
+		return (NULL);
+	}
+
+	new_node = (listint_t *)malloc(sizeof(listint_t));
 	if (new_node == NULL)
 	{
 		return (NULL);
 	}
+
 	new_node->n = n;
-	new_node->next = NULL;
-	if (*head == NULL)
-	{
-		if (idx != 0)
-		{
-			free(new_node);
-			return (NULL);
-		}
-		*head = new_node;
-		return (new_node);
-	}
+
 	if (idx == 0)
 	{
 		new_node->next = *head;
 		*head = new_node;
 		return (new_node);
 	}
-	current = *head;
-	while (current->next != NULL)
-	{
-		if (curr_idx == idx)
-		{
-			prev = current;
-			next = current->next;
-			new_node->next = next;
-			prev->next = new_node;
-			return (new_node);
-		}
-		current = current->next;
-		curr_idx++;
-	}
 
-	free(new_node);
-	return (NULL);
+	for (i = 0; i < idx - 1; i++)
+	{
+		current = current->next;
+	}
+	new_node->next = current->next;
+	current->next = new_node;
+
+	return (new_node);
 }
+
