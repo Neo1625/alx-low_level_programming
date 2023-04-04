@@ -21,8 +21,9 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	{
 		if (index == curr_idx)
 		{
-			return (current);
+			return (current->n);
 		}
+		curr_idx++;
 		current = current->next;
 	}
 
